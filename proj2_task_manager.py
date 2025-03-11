@@ -116,3 +116,54 @@ def delete_task(username):
         save_tasks(username, new_tasks)
         print("Task deleted successfully!")
 
+print("Starting Task Manager")
+
+def task_menu(username):
+    while True:
+        print("\n=== Task Manager Menu ===")
+        print("1. Add a Task")
+        print("2. View Tasks")
+        print("3. Mark Task as Completed")
+        print("4. Delete a Task")
+        print("5. Logout")
+        choice = input("Enter your choice (1-5): ").strip()
+
+        if choice == "1":
+            add_task(username)
+        elif choice == "2":
+            view_tasks(username)
+        elif choice == "3":
+            mark_task_completed(username)
+        elif choice == "4":
+            delete_task(username)
+        elif choice == "5":
+            print("Logging out...")
+            break
+        else:
+            print("Invalid choice. Please choose a valid option.")
+
+def main_menu():
+    while True:
+        print("\n=== Welcome to the Task Manager ===")
+        print("1. Register")
+        print("2. Login")
+        print("3. Exit")
+        choice = input("Enter your choice (1-3): ").strip()
+
+        if choice == "1":
+            user = reg_user()
+            if user:
+                task_menu(user)
+        elif choice == "2":
+            user = login()
+            if user:
+                task_menu(user)
+        elif choice == "3":
+            print("Exiting the program.")
+            break
+        else:
+            print("Invalid choice. Please choose between 1 and 3.")
+
+
+if __name__ == "__main__":
+    main_menu()         
