@@ -145,7 +145,7 @@ def task_menu(username):
         print("2. View Tasks")
         print("3. Mark Task as Completed")
         print("4. Delete a Task")
-        print("5. Logout")
+        print("5. Logout. Your tasks will be saved upon logout.")
         choice = input("Enter your choice (1-5): ").strip()
 
         if choice == "1":
