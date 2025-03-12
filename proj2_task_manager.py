@@ -26,7 +26,7 @@ def reg_user():
     username = input("Enter a username: ").strip()
     password = input("Enter a password. Your password must contain  at least one lowercase letter, one uppercase letter, one number, one special character, and be at least 8 characters long. ").strip()
     if not is_valid_password(password):
-        print("Invalid password.  It must have at least one lowercase letter, one uppercase letter, one number, one special character (@, $, !, %, *, ?, &), and be at least 8 characters long.")
+        print("Invalid password.  It must have at least one lowercase letter, one uppercase letter, one number, one special character (@, $, !, %, *, ?, &), and be at least 8 characters long:")
 
 
     if os.path.exists(USERS_FILE):
@@ -74,8 +74,12 @@ def load_tasks(username):
 
 def save_tasks(username, tasks):
     filename = f"tasks_{username}.json"
-    with open(filename, "w") as file:
-        json.dump(tasks, file, indent=4)
+    if not tasks:
+        print("No tasks to save.")
+    else:    
+        with open(filename, "w") as file:
+            json.dump(tasks, file, indent=4)
+        print("Your tasks have been saved!")    
 
 def add_task(username):
     tasks = load_tasks(username)
@@ -145,7 +149,8 @@ def task_menu(username):
         print("2. View Tasks")
         print("3. Mark Task as Completed")
         print("4. Delete a Task")
-        print("5. Logout. Your tasks will be saved upon logout.")
+        print("5. Save Tasks")
+        print("6. Logout. Your tasks will automatically be saved upon logout.")
         choice = input("Enter your choice (1-5): ").strip()
 
         if choice == "1":
@@ -157,6 +162,9 @@ def task_menu(username):
         elif choice == "4":
             delete_task(username)
         elif choice == "5":
+            tasks = load_tasks(username)
+            save_tasks(username, tasks)    
+        elif choice == "6":
             print("Logging out...")
             break
         else:
