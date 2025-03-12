@@ -3,5 +3,20 @@
         "id": 1,
         "description": "go for a walk",
         "status": "Pending"
+    },
+    {
+        "id": 2,
+        "description": "take a nap",
+        "status": "Pending"
+    },
+    {
+        "id": 3,
+        "description": "look out the window",
+        "status": "Pending"
+    },
+    {
+        "id": 4,
+        "description": "bark at the garbage man",
+        "status": "Pending"
     }
 ]

@@ -1,14 +1,34 @@
 import os
 import json
+import re
 
 USERS_FILE = "users.txt"
 
 #User Authentication functions
+
+#using regex for valid password
+
+def is_valid_password(password):
+    pattern = re.compile(
+        r'^(?=.*[a-z])'   # at least one lowercase letter
+        r'(?=.*[A-Z])'    # at least one uppercase letter
+        r'(?=.*\d)'       # at least one digit
+        r'(?=.*[@$!%*?&])'  # at least one special character
+        r'[A-Za-z\d@$!%*?&]{8,}$'  # at least 8 characters
+    )
+    return bool(pattern.match(password))
+
+
+
+# register new user
 def reg_user():
     print("First time user? Please create your credentials")
     username = input("Enter a username: ").strip()
-    password = input("Enter a password: ").strip()
-    
+    password = input("Enter a password. Your password must contain  at least one lowercase letter, one uppercase letter, one number, one special character, and be at least 8 characters long. ").strip()
+    if not is_valid_password(password):
+        print("Invalid password.  It must have at least one lowercase letter, one uppercase letter, one number, one special character (@, $, !, %, *, ?, &), and be at least 8 characters long.")
+
+
     if os.path.exists(USERS_FILE):
         with open(USERS_FILE, "r") as file:
             for line in file:
