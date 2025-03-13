@@ -172,7 +172,7 @@ def task_menu(username):
 
 def main_menu():
     while True:
-        print("\n=== Welcome to the Task Manager ===")
+        print("\n=== Welcome to the Task Manager \U0001F600===")
         print("1. Register")
         print("2. Login")
         print("3. Exit")

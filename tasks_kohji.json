@@ -2,7 +2,7 @@
     {
         "id": 1,
         "description": "draw a picture of spiderman",
-        "status": "Pending"
+        "status": "Completed"
     },
     {
         "id": 2,
@@ -12,6 +12,11 @@
     {
         "id": 3,
         "description": "play hockey",
+        "status": "Pending"
+    },
+    {
+        "id": 4,
+        "description": "write my name",
         "status": "Pending"
     }
 ]
