@@ -14,5 +14,5 @@ This application should have a more professional user interface possibly using a
 Code blocks were tested in increments in a colab notebook by calling the function and passing arguments if applicable and printing the results.  Once each function worked properly, testing involved both direct function calls in notebook and testing the full application using the CLI.
 ## Links and Visuals
 Github Repository: https://github.com/aliehs111/task_manager
-![Screenshot] (/Users/sheilamcgovern/Desktop/Projects2025/proj2_task_manager/assets/Screenshot 2025-03-13 at 12.41.06 PM.png)
+![Screenshot] (/assets/Screenshot 2025-03-13 at 12.41.06 PM.png)
 
