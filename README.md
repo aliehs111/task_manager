@@ -15,6 +15,7 @@ Code blocks were tested in increments in a colab notebook by calling the functio
 ## Links and Visuals
 Github Repository: https://github.com/aliehs111/task_manager
 
-![Alt text](/assets/Screenshot_2025-03-13_at_12.41.06_PM.png)
+![Alt text](assets/Screenshot%202025-03-13%20at%2012.41.06%20PM.png)
+
 
 
